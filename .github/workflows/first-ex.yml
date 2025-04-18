@@ -8,7 +8,7 @@ jobs:
         steps:
         - name: checkout repo
           uses: actions/checkout@v4
-          
+
         - name: welcome message
           run : echo "this is the first action"
         
@@ -17,4 +17,12 @@ jobs:
         
         - name: read file
           run: cat README.md
+
+        - name: list and read 
+          run: |
+            echo "here i want to read and list files"
+            ls -a
+            cat README.md
+        
+
             
