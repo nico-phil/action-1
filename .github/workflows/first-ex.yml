@@ -1,0 +1,17 @@
+name: "first work flow"
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: welcome message
+          run : echo "this is the first action"
+        
+        - name: list the file in this repo 
+          run: ls
+        
+        - name: read file
+          run: cat README.md
+            
