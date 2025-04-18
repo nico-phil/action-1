@@ -1,0 +1,14 @@
+name: "download go"
+
+on: push
+
+jobs:
+    go_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: install golang
+          run: sudo apt-get install go -y 
+
+        - name: display version
+          run: go version
+    
