@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: install golang
-          run: sudo apt-get install go -y 
+          uses: actions/setup-go@v4
 
         - name: display version
           run: go version
