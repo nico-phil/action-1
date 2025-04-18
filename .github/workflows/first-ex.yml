@@ -24,7 +24,8 @@ jobs:
             ls -a
             cat README.md
 
-    resting_job:
+    testing_job:
+        needs: build_job
         runs-on: ubuntu-latest
         steps:
         - name: testing
@@ -32,6 +33,7 @@ jobs:
 
 
     deploy_job:
+        needs: [testing_job]
         runs-on: ubuntu-latest
         steps:
         - name: testing
