@@ -23,6 +23,13 @@ jobs:
             echo "here i want to read and list files"
             ls -a
             cat README.md
+            echo "hello world" > hello.txt
+
+        - name: upload hello file
+          uses: actions/upload-artifact@v4
+          with:
+            name: hello-text-file
+            path: hello.txt
 
     testing_job:
         needs: build_job
@@ -31,6 +38,15 @@ jobs:
         - name: testing
           run: echo "running test"
 
+        - name: download hello text file
+          uses: actions/download-artifact@v4
+          with:
+            name: hello-text-file
+        
+        - name: read file
+          run: cat hello.txt
+        
+
 
     deploy_job:
         needs: [testing_job]
@@ -38,6 +54,7 @@ jobs:
         steps:
         - name: testing
           run: echo "running test"
+
     
 
 
