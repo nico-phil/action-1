@@ -53,7 +53,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: testing
-          run: echo "running test"
+          run: echo "running test 1"
 
     
 
