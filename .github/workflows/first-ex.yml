@@ -73,6 +73,13 @@ jobs:
         - name: testing
           run: echo "running test 1"
 
+    new_job:
+      needs: [deploy_job]
+      runs-on: ubuntu-latest
+      steps:
+      - name: testing
+        run: echo "running test 3"
+
     
 
 
